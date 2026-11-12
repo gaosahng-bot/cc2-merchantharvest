@@ -126,11 +126,20 @@ class Handler(BaseHTTPRequestHandler):
                 f"<input type='hidden' name='csrf' value='{self.server.csrf}'/>"
                 "<button>reveal</button></form></body></html>"
             )
-            tag = etag_for(html + f"|wave{self.server.wave}")
+            # ETag identifies product content (including real stock). The wave
+            # id and reveal/rendering state must not change it, so an unchanged
+            # product keeps the same ETag across waves and answers 304 to
+            # conditional requests even after the restock-alert RPA step, while
+            # a price or stock change produces a new ETag and a fresh 200.
+            tag = etag_for(
+                f"{p['sku']}|{p['title']}|{p['price_cents']}|{p['stock']}"
+            )
             lm = self.server.last_modified
             inm = self.headers.get("If-None-Match")
             ims = self.headers.get("If-Modified-Since")
-            if inm == tag or (ims and ims == lm):
+            # RFC 9110: when both validators are supplied both must match;
+            # a fixed Last-Modified across waves must not mask ETag changes.
+            if (inm == tag and (not ims or ims == lm)) or (not inm and ims == lm):
                 return self._send(304, b"", {"ETag": tag, "Last-Modified": lm})
             return self._send(200, html.encode(), {"ETag": tag, "Last-Modified": lm})
         return self._send(404, b"no")

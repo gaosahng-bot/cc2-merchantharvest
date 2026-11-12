@@ -8,15 +8,15 @@ Already in the tree:
 - `merchantharvest.http` — a tiny blocking HTTP/1.1 client that supports cookies
 - `docs/` describing login/CSRF, pagination, ETags, and the target schema
 
-Not implemented:
+Implemented:
 
-- Politeness / crawl-delay / per-host concurrency (`merchantharvest.polite`)
-- URL frontier with checkpoint (`merchantharvest.frontier`)
-- Conditional GET + content-hash dedup that ignores volatile query params
-- Login + CSRF form flow
-- Listing/detail parsers into the normalized schema
-- Incremental second wave that emits price/stock change events
-- The harvest CLI
+- Politeness: robots.txt parsing (Disallow + Crawl-delay) with a per-host throttle (`merchantharvest.polite`)
+- Checkpointable FIFO URL frontier that canonicalizes away `utm_*` / `session` params (`merchantharvest.frontier`)
+- Login + CSRF form flow with the session cookie, plus the restock-alert RPA step that reveals real stock
+- Standard-library listing/detail parsers handling both title/price markup variants (`merchantharvest.parse`)
+- Conditional GET (`If-None-Match` / `If-Modified-Since`), sha256 content hashing and content/URL dedup
+- Incremental runs emitting `upsert`, `new`, `price_change` and `stock_change` events (`merchantharvest.harvest`)
+- `harvest` and `verify` CLI commands, with the harvest refusing any non-local host
 
 ```
 # terminal A
