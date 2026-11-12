@@ -1,0 +1,27 @@
+{
+  "changes": {
+    "MH-001": {
+      "price_cents": 975,
+      "stock": 1
+    },
+    "MH-004": {
+      "price_cents": 1315
+    },
+    "MH-007": {
+      "stock": 0
+    },
+    "MH-010": {
+      "price_cents": 2350,
+      "stock": 11
+    }
+  },
+  "added": [
+    {
+      "sku": "MH-013",
+      "title": "Felt Cable Ties",
+      "price_cents": 450,
+      "stock": 20,
+      "currency": "USD"
+    }
+  ]
+}

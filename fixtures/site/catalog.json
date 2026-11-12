@@ -1,0 +1,88 @@
+{
+  "products": [
+    {
+      "sku": "MH-001",
+      "title": "Cedar Desk Organiser",
+      "price_cents": 935,
+      "stock": 5,
+      "currency": "USD"
+    },
+    {
+      "sku": "MH-002",
+      "title": "Brass Desk Lamp",
+      "price_cents": 1070,
+      "stock": 7,
+      "currency": "USD"
+    },
+    {
+      "sku": "MH-003",
+      "title": "Wool Travel Throw",
+      "price_cents": 1205,
+      "stock": 9,
+      "currency": "USD"
+    },
+    {
+      "sku": "MH-004",
+      "title": "Inkstone Notebook Set",
+      "price_cents": 1340,
+      "stock": 11,
+      "currency": "USD"
+    },
+    {
+      "sku": "MH-005",
+      "title": "Oak Monitor Riser",
+      "price_cents": 1475,
+      "stock": 4,
+      "currency": "USD"
+    },
+    {
+      "sku": "MH-006",
+      "title": "Linen Apron",
+      "price_cents": 1610,
+      "stock": 6,
+      "currency": "USD"
+    },
+    {
+      "sku": "MH-007",
+      "title": "Ceramic Pour-Over Cone",
+      "price_cents": 1745,
+      "stock": 8,
+      "currency": "USD"
+    },
+    {
+      "sku": "MH-008",
+      "title": "Canvas Tool Roll",
+      "price_cents": 1880,
+      "stock": 10,
+      "currency": "USD"
+    },
+    {
+      "sku": "MH-009",
+      "title": "Birch Cutting Board",
+      "price_cents": 2015,
+      "stock": 3,
+      "currency": "USD"
+    },
+    {
+      "sku": "MH-010",
+      "title": "Steel Ruler Set",
+      "price_cents": 2150,
+      "stock": 5,
+      "currency": "USD"
+    },
+    {
+      "sku": "MH-011",
+      "title": "Cotton Dust Cover",
+      "price_cents": 2285,
+      "stock": 7,
+      "currency": "USD"
+    },
+    {
+      "sku": "MH-012",
+      "title": "Walnut Phone Stand",
+      "price_cents": 2420,
+      "stock": 9,
+      "currency": "USD"
+    }
+  ]
+}
